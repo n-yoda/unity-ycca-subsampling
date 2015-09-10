@@ -1,4 +1,4 @@
-﻿Shader "Hidden/Y8CgCoA4 Encoder"
+﻿Shader "Hidden/RGBA to CgACoY"
 {
     Properties
     {

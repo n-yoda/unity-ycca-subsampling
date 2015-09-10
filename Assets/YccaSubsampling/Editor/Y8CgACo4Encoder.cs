@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 using UnityEditor;
-using System.Collections;
 using System.IO;
-using System.Diagnostics;
 
-public static class Y8CgCoA4Encoder
+public static class Y8CgACo4Encoder
 {
     public static void Encode (Color[] src, Color[] dst)
     {
@@ -19,9 +17,16 @@ public static class Y8CgCoA4Encoder
         }
     }
 
+    public static void Encode (Texture2D src, Texture2D dst)
+    {
+        var pixels = dst.GetPixels ();
+        Encode (pixels, pixels);
+        dst.SetPixels (pixels);
+    }
+
     public static void EncodeGPU (Texture2D src, Texture2D dst)
     {
-        var shader = Shader.Find ("Hidden/Y8CgCoA4 Encoder");
+		var shader = Shader.Find ("Hidden/RGBA to CgACoY");
         var mat = new Material (shader);
         var temp = RenderTexture.GetTemporary (src.width, src.height);
         Graphics.Blit (src, temp, mat);
@@ -31,7 +36,7 @@ public static class Y8CgCoA4Encoder
     }
 
     public static void EncodeSave (Texture2D src, TextureImporterFormat fmt4bpp, bool gpu,
-       string ySuffix = "y", string ccaSuffix = "cgcoa")
+       string ySuffix = "y", string ccaSuffix = "c")
     {
         var path = AssetDatabase.GetAssetPath (src);
         var yPath = Path.ChangeExtension (path, ySuffix + ".png");
@@ -76,15 +81,15 @@ public static class Y8CgCoA4Encoder
         ccaImp.SaveAndReimport();
     }
 
-    [MenuItem("Assets/Y8CgCoA4/Encode PVRTC")]
+	[MenuItem("Assets/Ycca Subsampling/Y (Alpha8) CgACo (PVRTC4)")]
     static void EncodeSavePVRTC()
     {
         var tex = Selection.activeObject as Texture2D;
         if (tex) EncodeSave (tex, TextureImporterFormat.PVRTC_RGB4, false);
     }
 
-    [MenuItem("Assets/Y8CgCoA4/Encode PVRTC (GPU)")]
-    static void EncodeSaveETC()
+	[MenuItem("Assets/Ycca Subsampling/Y (Alpha8) CgACo (PVRTC4) [GPU]")]
+    static void EncodeSavePVRTC_GPU()
     {
         var tex = Selection.activeObject as Texture2D;
         if (tex) EncodeSave (tex, TextureImporterFormat.PVRTC_RGB4, true);

@@ -1,9 +1,9 @@
-﻿Shader "Custom/Y8CgCoA4"
+﻿Shader "Custom/Y-CgACo to RGBA"
 {
     Properties
     {
         _Y("Y", 2D) = "white" {}
-        _CgCoA("CgCoA", 2D) = "white" {}
+        _CgACo("CgACo", 2D) = "white" {}
     }
 
     CGINCLUDE
@@ -11,12 +11,12 @@
     #include "UnityCG.cginc"
 
     sampler2D _Y;
-    sampler2D _CgCoA;
+    sampler2D _CgACo;
 
     half4 frag(v2f_img i) : SV_Target 
     {
         half y = tex2D(_Y, i.uv).a;
-        half3 x = tex2D(_CgCoA, i.uv).xyz;
+        half3 x = tex2D(_CgACo, i.uv).xyz;
         half cg = x.x;
         half co = x.z;
         return half4(
