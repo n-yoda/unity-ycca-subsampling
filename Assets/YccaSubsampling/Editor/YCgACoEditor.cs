@@ -205,8 +205,8 @@ public class YCgACoEditor : EditorWindow
     {
         var path = AssetDatabase.GetAssetPath(source);
         var selection = new Object[]{
-            MakeEmptyPng(AddSuffixToPath(path, "_Y")),
-            MakeEmptyPng(AddSuffixToPath(path, "_CgACo")),
+            MakeEmptyPng(AddSuffixToPath(path, "Y")),
+            MakeEmptyPng(AddSuffixToPath(path, "CgACo")),
         };
         ApplySelection(selection);
         entries[0].MakeUserData(source);
@@ -215,10 +215,11 @@ public class YCgACoEditor : EditorWindow
         entries[1].MakeUserData(source);
         entries[1].Format = YCgACoFormat.CgACo_RGB24_Half_6bpp;
         entries[1].Apply();
-        Material mat = new Material(Shader.Find("Custom/Y-CgACo to RGBA"));
+        var mat = new Material(Shader.Find("Custom/Y-CgACo to RGBA"));
+        var matPath = AssetDatabase.GenerateUniqueAssetPath(Path.ChangeExtension(path, "mat"));
         mat.SetTexture("_Y", entries[0].Texture);
         mat.SetTexture("_CgACo", entries[1].Texture);
-        AssetDatabase.CreateAsset(mat, AssetDatabase.GenerateUniqueAssetPath(Path.ChangeExtension(path, "mat")));
+        AssetDatabase.CreateAsset(mat, matPath);
         Selection.objects = selection;
     }
 
