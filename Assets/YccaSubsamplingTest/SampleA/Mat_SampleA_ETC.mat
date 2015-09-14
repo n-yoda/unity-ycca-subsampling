@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Mat_SamleA
+  m_Name: Mat_SampleA_ETC
   m_Shader: {fileID: 4800000, guid: 98cfa0549c7594fc1adfad609d52f1c5, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -26,7 +26,7 @@ Material:
         first:
           name: _CgACo
         second:
-          m_Texture: {fileID: 2800000, guid: a8e4eedbe138c499da520b7475efd503, type: 3}
+          m_Texture: {fileID: 2800000, guid: ad6e44802d36b4e648ddd06193684166, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats: {}

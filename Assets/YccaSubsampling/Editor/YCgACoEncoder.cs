@@ -12,6 +12,7 @@ public enum YCgACoFormat
     CgACo_ETC_4bpp,
     CgACo_RGB24_Half_6bpp,
     CgACo_RGB565_Half_4bpp,
+    CgACo_RGB565_16bpp,
 }
 
 public static class YCgACoEncoder
@@ -138,6 +139,7 @@ public static class YCgACoEncoder
                 texFormat = TextureFormat.RGB24;
                 break;
             case YCgACoFormat.CgACo_RGB565_Half_4bpp:
+            case YCgACoFormat.CgACo_RGB565_16bpp:
                 texFormat = TextureFormat.RGB565;
                 break;
             case YCgACoFormat.CgACoY_DontChange:

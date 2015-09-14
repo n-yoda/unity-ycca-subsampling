@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Mat_SampleA_PVRTC
+  m_Name: Mat_SampleA_RGB565
   m_Shader: {fileID: 4800000, guid: 98cfa0549c7594fc1adfad609d52f1c5, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
