@@ -1,6 +1,7 @@
 # YCCA Subsampling for Unity
 YCCA subsampling is a set of lossy texture compression formats
 inspired by [ChromaPack](https://github.com/keijiro/ChromaPack).
+You can choose bpp (bits per pixel) from 12, 14 and 24.
 The main difference from ChromaPack is that they support **alpha**.
 ![Preview](Assets/YccaSubsamplingTest/SampleA/Screenshot.png)
 
