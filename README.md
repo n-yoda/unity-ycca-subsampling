@@ -20,12 +20,23 @@ but currently they are not supported.
 1. Click the menu "Window/YCgACo Editor".
 2. Select source image, and then click "Generate Y, CgACo and Material".
 3. Change format and quality, and click "Apply" if you need.
+
 ![Editor1](Assets/YccaSubsamplingTest/SampleA/EditorSS1.png)
 ![Editor2](Assets/YccaSubsamplingTest/SampleA/EditorSS2.png)
 
-## Dummy PNG + AssetImporter.userData + postprocess
+## Dummy PNG + user data + postprocess
 YCgACo Editor does not produce PNG file which contains texture data.
-Instead, it produces **1 pixel dummy PNG files**, and meta files which contains the source image GUID and target compression format as **AssetImporter.userData**. The dummy PNGs are imported as actual encoded textures when they are **post-processed** by *YCgACoPostprocessor*. 
+Instead, it produces **1 pixel dummy PNG files**,
+and meta files which contains the source image GUID
+and target compression format as **AssetImporter.userData**.
+The dummy PNGs are imported as actual encoded textures
+when they are **post-processed** by *YCgACoPostprocessor*. 
 
 ## Examples
+* Assets/YccaSubsamplingTest/Circle/Circle.png 128x128 pixels
 ![Examples](Assets/YccaSubsamplingTest/Circle/Screenshot.png)
+
+## TODO
+* Reimporting encoded textures when the source texture is updated.
+* Support YCbCr and other color spaces.
+* Scaling CgACo textures in order to achieve flexible bits per pixel.
