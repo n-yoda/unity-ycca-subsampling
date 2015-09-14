@@ -12,6 +12,9 @@ which can be decoded effectively.
 which is used in [ChromaPack](https://github.com/keijiro/ChromaPack))
 can be supported by slightly modifying the encoder and decoder,
 but currently they are not supported.
+    * Note that effectiveness is not certain,
+because YCgCo and YCbCr are equivalent in decoding time
+where matrix multiplication is fast enough.
 * Y channel is stored without compression (Alpha 8).
 * Cg Co and Alpha channels are stored in compressed formats, such as:
     * 4 bpp block compression formats (ETC1, PVRTC or DXT1).
@@ -41,3 +44,4 @@ when they are **post-processed** by *YCgACoPostprocessor*.
 * Reimporting encoded textures when the source texture is updated.
 * Support YCbCr and other color spaces.
 * Scaling CgACo textures in order to achieve flexible bits per pixel.
+* Writing a decoder as a matrix multiplication and measure performances.
