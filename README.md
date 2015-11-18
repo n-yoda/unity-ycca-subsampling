@@ -42,6 +42,6 @@ when they are **post-processed** by *YCgACoPostprocessor*.
 
 ## TODO
 * Reimporting encoded textures when the source texture is updated.
-* Support YCbCr and other color spaces.
+* Support YCbCr and other color spaces (e.g. __PCA-based color space__).
 * Scaling CgACo textures in order to achieve flexible bits per pixel.
 * Writing a decoder as a matrix multiplication and measure performances.
