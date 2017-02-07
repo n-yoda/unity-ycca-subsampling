@@ -5,6 +5,12 @@ You can choose bpp (bits per pixel) from 12, 14 and 24.
 The main difference from ChromaPack is that they support **alpha**.
 ![Preview](Assets/YccaSubsamplingTest/SampleA/Screenshot.png)
 
+## Read before trying this repository!
+* Use ETC2 on mobile platforms where OpenGL ES 3.0 is supported.
+* Use ASTC or DXTC for PCs.
+* Try ETC/PVRTC and (half-resolution) alpha mask.
+* Try this repository only if none of the above satisfies your requirements.
+
 ## Overview
 * RGB is encoded into [YCgCo](https://en.wikipedia.org/wiki/YCgCo),
 which can be decoded effectively.
